@@ -2,7 +2,7 @@
 // You can write your code in this editor
 if(mouse_check_button_pressed(mb_left)){
  //You might need to change mouse_x comparisons if/when menu objects are moved to GUI
- if(mouse_x < room_width - 70 && mouse_y > 64) {
+ if(mouse_x < room_width - frameSize && mouse_y > frameSize) {
 	 var gridX, gridY
 	 gridX = floor(mouse_x/gridsize)
 	 gridY = floor(mouse_y/gridsize)
