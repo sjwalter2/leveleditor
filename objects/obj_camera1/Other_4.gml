@@ -1,5 +1,6 @@
 /// @description Insert description here
-view_camera[0] = camera_create_view(0,room_height-view_height*window_scale,view_width*window_scale,view_height*window_scale,0,obj_camera,-1,-1,view_width*window_scale/2,view_height*window_scale/2)
+
+view_camera[0] = camera_create_view(0,room_height-viewH,viewW,viewH,0,obj_camera,-1,-1,viewW/2,viewH/2)
 view_enabled = true
 view_visible[0]=true
 
