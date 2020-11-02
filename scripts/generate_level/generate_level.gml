@@ -31,9 +31,10 @@ function generate_level(width, height, maxWidth, maxHeight, startMinWidth, start
 		var maxAttempts = 1000
 		var dimensionsFound = 0
 		
-		//Find random empty space to create room
+		
 		while(!dimensionsFound)
 		{
+			//Find random empty space to create room
 			var xx = irandom(width - 1)
 			var yy = irandom(height - 1)
 			if(ds_grid_get(levelGrid, xx, yy) == -1)
@@ -42,10 +43,13 @@ function generate_level(width, height, maxWidth, maxHeight, startMinWidth, start
 				
 			
 				//Set room size and check for empty area
-			
 				var currentRoomW = irandom_range(currentMinW, currentMaxW) 
 				var currentRoomH = irandom_range(currentMinH, currentMaxH) 
 				var occupied = 0
+				
+				//Check out of bounds
+				if(xx + currentRoomW > width || yy + currentRoomH > height)
+					occupied = 1
 				
 				//Check spaces from the random xx and yy through xx + room width and yy + room height
 				//If occupied, break and find a new spot
@@ -75,14 +79,6 @@ function generate_level(width, height, maxWidth, maxHeight, startMinWidth, start
 					}
 					ds_map_add(roomMap,"x",xx)
 					ds_map_add(roomMap,"y",yy)
-					
-					//If it goes past boundries, shrink the width or height to fit
-					if(xx + currentRoomW >= width)
-						currentRoomW = width - xx
-						
-					if(yy + currentRoomH >= height)
-						currentRoomH = height - yy
-						
 					ds_map_add(roomMap,"width",currentRoomW)
 					ds_map_add(roomMap,"height",currentRoomH)
 					ds_list_add(levelList,roomMap)

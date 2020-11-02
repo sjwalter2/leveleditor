@@ -1,9 +1,9 @@
 //Level Size
 levelWidth = 15
-levelHeight = 15
+levelHeight = 5
 
 //Room max size
-maxRoomWidth = 5
+maxRoomWidth = 4
 maxRoomHeight = 4
 
 //Room start min size
