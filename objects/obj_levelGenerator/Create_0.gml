@@ -6,8 +6,12 @@ levelHeight = 15
 maxRoomWidth = 5
 maxRoomHeight = 4
 
+//Room start min size
+minRoomWidth = 3
+minRoomHeight = 2
+
 //Main script
-var results = generate_level(levelWidth, levelHeight, maxRoomWidth, maxRoomHeight)
+var results = generate_level(levelWidth, levelHeight, maxRoomWidth, maxRoomHeight, minRoomWidth, minRoomHeight)
 
 //Returns a grid with each space as the room it belongs to
 levelGrid = results[0]

@@ -1,4 +1,4 @@
-function generate_level(width, height, maxWidth, maxHeight)
+function generate_level(width, height, maxWidth, maxHeight, startMinWidth, startMinHeight)
 {
 	//Grid of rooms to find empty spaces
 	var levelGrid = ds_grid_create(width, height)	
@@ -20,27 +20,29 @@ function generate_level(width, height, maxWidth, maxHeight)
 	//Main level generation loop
 	while(!levelGridFull)
 	{
+		//Start looking for rooms of max size
+		var currentMaxW = maxWidth
+		var currentMinW = startMinWidth
+		var currentMaxH = maxHeight
+		var currentMinH = startMinHeight
+			
+		//Shrink the size targets after maxAttempts reached
+		var attempts = 0
+		var maxAttempts = 1000
+		var dimensionsFound = 0
+		
 		//Find random empty space to create room
-		var xx = irandom(width - 1)
-		var yy = irandom(height - 1)
-		if(ds_grid_get(levelGrid, xx, yy) == -1)
+		while(!dimensionsFound)
 		{
-			var roomMap	= ds_map_create()
-			var dimensionsFound = 0
-			
-			//Start looking for rooms of max size
-			var currentMaxW = maxWidth
-			var currentMinW = maxWidth
-			var currentMaxH = maxHeight
-			var currentMinH = maxHeight
-			
-			//Shrink the size targets after maxAttempts reached
-			var attempts = 0
-			var maxAttempts = 1000
-			
-			//Set room size and check for empty area
-			while(!dimensionsFound)
+			var xx = irandom(width - 1)
+			var yy = irandom(height - 1)
+			if(ds_grid_get(levelGrid, xx, yy) == -1)
 			{
+				var roomMap	= ds_map_create()
+				
+			
+				//Set room size and check for empty area
+			
 				var currentRoomW = irandom_range(currentMinW, currentMaxW) 
 				var currentRoomH = irandom_range(currentMinH, currentMaxH) 
 				var occupied = 0
@@ -61,44 +63,8 @@ function generate_level(width, height, maxWidth, maxHeight)
 						break
 				}
 				
-				
-				if(occupied)
-				{
-					attempts++
-					//Once attempts reach max, shrink min until it reaches 1, then shrink max until 1
-					if(attempts > maxAttempts && (currentMinW > 1 || currentMinH > 1))
-					{
-						if(currentMinH > 1 && currentMinW > 1)
-						{
-							if(irandom(1))
-								currentMinH--
-							else
-								currentMinW--
-						}
-						else if(currentMinH > 1)
-							currentMinH--
-						else
-							currentMinW--
-						attempts = 0
-					}
-					else if(attempts > maxAttempts && (currentMaxW > 1 || currentMaxH > 1))
-					{
-						if(currentMaxH > 1 && currentMaxW > 1)
-						{
-							if(irandom(1))
-								currentMaxH--
-							else
-								currentMaxW--
-						}
-						else if(currentMaxH > 1)
-							currentMaxH--
-						else
-							currentMaxW--
-						attempts = 0
-					}
-				}
 				//If not occupied, set the grid values and save the room info to the level list
-				else
+				if(!occupied)
 				{
 					for(var i = xx; i < xx + currentRoomW && i < width; i++)
 					{
@@ -124,7 +90,42 @@ function generate_level(width, height, maxWidth, maxHeight)
 					currentRoom++
 					dimensionsFound = 1
 				}
-			}			
+			}
+			else
+			{
+				attempts++
+				//Once attempts reach max, shrink min until it reaches 1, then shrink max until 1
+				if(attempts > maxAttempts && (currentMinW > 1 || currentMinH > 1))
+				{
+					if(currentMinH > 1 && currentMinW > 1)
+					{
+						if(irandom(1))
+							currentMinH--
+						else
+							currentMinW--
+					}
+					else if(currentMinH > 1)
+						currentMinH--
+					else
+						currentMinW--
+					attempts = 0
+				}
+				else if(attempts > maxAttempts && (currentMaxW > 1 || currentMaxH > 1))
+				{
+					if(currentMaxH > 1 && currentMaxW > 1)
+					{
+						if(irandom(1))
+							currentMaxH--
+						else
+							currentMaxW--
+					}
+					else if(currentMaxH > 1)
+						currentMaxH--
+					else
+						currentMaxW--
+					attempts = 0
+				}
+			}
 		}
 		
 		

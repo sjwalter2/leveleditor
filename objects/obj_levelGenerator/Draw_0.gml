@@ -35,5 +35,5 @@ for(var i = 0; i < ds_list_size(levelList); i++)
 	draw_text(startX + (xx+ww/2)*space,(yy+hh/2)*space, i)
 }
 draw_set_color(c_white)
-draw_text(startX*1.5, space*(j+1), "levelList Map")
+draw_text(startX + space*width/2, space*(j+1), "levelList Map")
 
