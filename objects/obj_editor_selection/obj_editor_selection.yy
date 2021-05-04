@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "editorObjects",
+    "path": "folders/Objects/editorObjects.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_editor_selection",

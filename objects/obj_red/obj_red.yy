@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "gameObjects",
+    "path": "folders/Objects/gameObjects.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_red",

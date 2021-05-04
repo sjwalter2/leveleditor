@@ -2,13 +2,14 @@
 
 
 if(newLevel){
-	
-	//Create the level container
-	level = ds_grid_create(10,11)
 
 	//Reference to the number of rows and columns in the level:
-	levelX = 100
-	levelY = 100
+	levelX = 20
+	levelY = 20
+
+	//Create the level container
+	level = ds_grid_create(levelX,levelY+1)
+
 
 
 
@@ -16,20 +17,22 @@ if(newLevel){
 	level = LoadLevel("mylevel.lvl")
 	levelX = ds_grid_width(level)
 	levelY = ds_grid_height(level)-1
-
 	var i,j
 	for (i = 0; i < ds_grid_width(level); i += 1) {
 		for (j = 0; j < ds_grid_height(level)-1; j += 1) {
 			var index = ds_grid_get(level,i,j)
-			if index != 0
-				instance_create_layer(i*gridsize,j*gridsize,"Instances",asset_get_index(index))
+			if index != 0 {
+				var mannequin = instance_create_layer((i+1)*gridsize,(j+1)*gridsize,"Instances",obj_editor_mannequin)
+				mannequin.object_reference = index
+				show_debug_message("Loaded: " + index)
+			}
 		}	
 	}
 
 }
 
-room_width = levelX * gridsize + frameSize
-room_height = levelY * gridsize
+room_width = levelX * gridsize + (frameSize*2)
+room_height = levelY * gridsize + (frameSize*2)
 
 
 player = instance_create_layer(0,0,"Instances",obj_player)

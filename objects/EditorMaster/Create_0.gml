@@ -1,5 +1,5 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Level Editor
+
 
 //=============================================
 //              Level Definition
@@ -23,6 +23,6 @@ editorRoom = room_goto(room_add())
 //======================================
 
 gridsize = 64 //Size of each "game block"
-frameSize = 70 //Size of the GUI frame, which lines the right side of the screen
+frameSize = 64 //Size of the GUI frame, which lines the right side of the screen
 
 currentSelection = obj_blue //This is changed in the Left Mouse Button event of obj_editor_button
