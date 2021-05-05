@@ -14,7 +14,7 @@ if(newLevel){
 
 
 } else {
-	level = LoadLevel("mylevel.lvl")
+	level = LoadLevel()
 	levelX = ds_grid_width(level)
 	levelY = ds_grid_height(level)-1
 	var i,j

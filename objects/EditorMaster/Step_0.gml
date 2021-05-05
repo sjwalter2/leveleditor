@@ -25,7 +25,6 @@ SaveLevel(level)
 }
 
 if(keyboard_check_pressed(ord("L"))){
-levelToLoad = "mylevel.lvl" //example: "default.lvl"
 newLevel = 0;
 alarm_set(0,1);
 
