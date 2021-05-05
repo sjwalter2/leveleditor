@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_blue",
-    "path": "sprites/spr_blue/spr_blue.yy",
+    "name": "spr_green",
+    "path": "sprites/spr_green/spr_green.yy",
   },
   "solid": false,
   "visible": true,
@@ -28,7 +28,7 @@
     "path": "folders/Objects/gameObjects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_blue",
+  "name": "obj_green",
   "tags": [],
   "resourceType": "GMObject",
 }

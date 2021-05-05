@@ -35,13 +35,9 @@ room_width = levelX * gridsize + (frameSize*2)
 room_height = levelY * gridsize + (frameSize*2)
 
 
-player = instance_create_layer(0,0,"Instances",obj_player)
-
 mouse_follower = instance_create_layer(0,0,"Instances",obj_editor_selection)
 mouse_follower.sprite_index = object_get_sprite(currentSelection)
 
-//List of objects that can be placed by the editor
-editor_objects = ["obj_blue","obj_red"]
 
 //Create buttons to press for each object in editor_objects
 var i;

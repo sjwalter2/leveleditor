@@ -1,4 +1,4 @@
-var spd = 6
+var spd = 15
 
 if(keyboard_check(vk_left)) {
 	hspeed = -spd
@@ -15,3 +15,12 @@ if(keyboard_check(vk_up)) {
 } else {
 	vspeed = 0
 }
+
+if x<frameSize
+	x=frameSize
+if x>room_width-frameSize
+	x=room_width-frameSize
+if y>room_height-frameSize
+	y=room_height-frameSize
+if y<frameSize
+	y=frameSize
