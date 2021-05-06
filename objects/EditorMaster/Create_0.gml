@@ -13,7 +13,8 @@ newLevel = 1 //By default, when EditorMaster is created, we'll start with a blan
 			 //For example, after exiting a playtest, an instance of EditorMaster will be created and given a levelname to auto-load
 			 //The levelname to autoload can be set in variable levelToLoad
 
-levelToLoad = "" //example: "default.lvl"
+levelToLoad=""
+
 alarm_set(0,1); //This alarm will check newLevel and generate a new level or load a level, accordingly
 
 editorRoom = room_goto(room_add())

@@ -14,7 +14,12 @@ if(newLevel){
 
 
 } else {
-	level = LoadLevel()
+	if(levelToLoad == "") {
+		level = LoadLevel()
+	} else {
+		level = LoadLevelFrom(levelToLoad)
+		levelToLoad=""
+	}
 	levelX = ds_grid_width(level)
 	levelY = ds_grid_height(level)-1
 	var i,j

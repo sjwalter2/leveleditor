@@ -31,3 +31,11 @@ alarm_set(0,1);
 editorRoom = room_goto(room_add())
 
 }
+
+if(keyboard_check_pressed(ord("T"))){
+	CheckForSaveFile()
+	AutoSaveTestLevel(level)
+	newLevel = 0;
+	alarm_set(1,1);
+	editorRoom = room_goto(room_add())
+}

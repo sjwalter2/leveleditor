@@ -11,3 +11,13 @@ function LoadLevel(){
  
  return myLevel
 }
+
+function LoadLevelFrom(_levelfile){
+
+ var file = file_text_open_read(_levelfile)
+ myLevel = ds_grid_create(1,1)
+ ds_grid_read(myLevel,file_text_read_string(file))
+ file_text_close(file)
+ 
+ return myLevel
+}
