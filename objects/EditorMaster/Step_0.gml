@@ -26,10 +26,13 @@ SaveLevel(level)
 
 if(keyboard_check_pressed(ord("L"))){
 newLevel = 0;
-alarm_set(0,1);
-
-editorRoom = room_goto(room_add())
-
+	if(levelToLoad == "") {
+		levelToLoad = LoadLevel()     //User selects a level file
+		if(levelToLoad != ""){        //If user cancels, exit; otherwise, proceed to load level
+			alarm_set(0,1);           //We have to wait till we move to the next room before we can build the new level
+			editorRoom = room_goto(room_add())
+		}
+	}
 }
 
 if(keyboard_check_pressed(ord("T"))){
@@ -37,5 +40,12 @@ if(keyboard_check_pressed(ord("T"))){
 	AutoSaveTestLevel(level)
 	newLevel = 0;
 	alarm_set(1,1);
+	editorRoom = room_goto(room_add())
+}
+
+if(keyboard_check_pressed(ord("N"))){
+	newLevel = 1
+	levelToLoad=""
+	alarm_set(0,1);  //We have to wait till we move to the next room before we can build the new level
 	editorRoom = room_goto(room_add())
 }

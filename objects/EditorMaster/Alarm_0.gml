@@ -1,4 +1,4 @@
-/// @description Load a level
+/// @description Load a level room
 
 
 if(newLevel){
@@ -14,12 +14,9 @@ if(newLevel){
 
 
 } else {
-	if(levelToLoad == "") {
-		level = LoadLevel()
-	} else {
-		level = LoadLevelFrom(levelToLoad)
-		levelToLoad=""
-	}
+	
+	level = LoadLevelFrom(levelToLoad)
+	levelToLoad=""
 	levelX = ds_grid_width(level)
 	levelY = ds_grid_height(level)-1
 	var i,j
