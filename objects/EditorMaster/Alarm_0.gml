@@ -4,8 +4,8 @@
 if(newLevel){
 
 	//Reference to the number of rows and columns in the level:
-	levelX = 20
-	levelY = 20
+	levelX = 30
+	levelY = 30
 
 	//Create the level container
 	level = ds_grid_create(levelX,levelY+1)
