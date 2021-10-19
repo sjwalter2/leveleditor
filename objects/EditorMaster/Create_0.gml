@@ -30,3 +30,7 @@ currentSelection = obj_blue //This is changed in the Left Mouse Button event of 
 
 //List of objects that can be placed by the editor
 editor_objects = ["obj_blue","obj_red","obj_green"]
+
+
+//Dialogue checkers
+confirmNewLevel = 0 //Set to 1 if you want to verify before starting a new level

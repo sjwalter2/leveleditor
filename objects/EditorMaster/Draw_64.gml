@@ -10,3 +10,6 @@ draw_line(0,frameSize,gw ,frameSize)
 draw_line(0,gh-frameSize,gw,gh-frameSize)
 draw_text(gw/2, 4,"Current Selection: " + string(object_get_name(currentSelection)))
 
+if(confirmNewLevel == 1) {
+	draw_text(10,40,"Unsaved changes will be lost; C to cancel, N to start a New Level")
+}

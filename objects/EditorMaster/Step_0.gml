@@ -43,9 +43,18 @@ if(keyboard_check_pressed(ord("T"))){
 	editorRoom = room_goto(room_add())
 }
 
+if(keyboard_check_pressed(ord("C"))){
+	confirmNewLevel = 0
+}
+
 if(keyboard_check_pressed(ord("N"))){
-	newLevel = 1
-	levelToLoad=""
-	alarm_set(0,1);  //We have to wait till we move to the next room before we can build the new level
-	editorRoom = room_goto(room_add())
+	if(confirmNewLevel == 0){
+		confirmNewLevel = 1
+	} else {
+		newLevel = 1
+		confirmNewLevel = 0
+		levelToLoad=""
+		alarm_set(0,1);  //We have to wait till we move to the next room before we can build the new level
+		editorRoom = room_goto(room_add())
+	}
 }
