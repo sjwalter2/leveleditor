@@ -26,10 +26,10 @@ editorRoom = room_goto(room_add())
 gridsize = 64 //Size of each "game block"
 frameSize = gridsize //Size of the GUI frame
 
-currentSelection = obj_blue //This is changed in the Left Mouse Button event of obj_editor_button
+currentSelection = obj_blueBot //This is changed in the Left Mouse Button event of obj_editor_button
 
 //List of objects that can be placed by the editor
-editor_objects = ["obj_blue","obj_red","obj_green"]
+editor_objects = ["obj_blueBot","obj_red","obj_green"]
 
 
 //Dialogue checkers

@@ -4,5 +4,9 @@ if(keyboard_check_pressed(ord("T"))){
 	editor.newLevel=0
 	editor.levelToLoad=working_directory + "Levels\\AutoSave.lvl"
 	instance_destroy()
+	with(obj_camera_editor){
+		sprite_index = spr_camera_editor
+	}
+
 }
 

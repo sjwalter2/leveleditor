@@ -1,4 +1,4 @@
-var spd = 6
+/*var spd = 6
 
 if(keyboard_check(vk_left)) {
 	hspeed = -spd
@@ -15,3 +15,4 @@ if(keyboard_check(vk_up)) {
 } else {
 	vspeed = 0
 }
+*/

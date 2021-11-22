@@ -1,6 +1,6 @@
 {
   "resources": [
-    {"id":{"name":"obj_blue","path":"objects/obj_blue/obj_blue.yy",},"order":3,},
+    {"id":{"name":"obj_blueBot","path":"objects/obj_blueBot/obj_blueBot.yy",},"order":3,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":1,},
     {"id":{"name":"EditorMaster","path":"objects/EditorMaster/EditorMaster.yy",},"order":1,},
     {"id":{"name":"generate_level","path":"scripts/generate_level/generate_level.yy",},"order":3,},
@@ -13,6 +13,7 @@
     {"id":{"name":"SaveLevel","path":"scripts/SaveLevel/SaveLevel.yy",},"order":2,},
     {"id":{"name":"obj_levelGenerator","path":"objects/obj_levelGenerator/obj_levelGenerator.yy",},"order":10,},
     {"id":{"name":"LoadLevel","path":"scripts/LoadLevel/LoadLevel.yy",},"order":1,},
+    {"id":{"name":"spr_empty_sprite","path":"sprites/spr_empty_sprite/spr_empty_sprite.yy",},"order":6,},
     {"id":{"name":"spr_green","path":"sprites/spr_green/spr_green.yy",},"order":4,},
     {"id":{"name":"RoomLevelGenerator","path":"rooms/RoomLevelGenerator/RoomLevelGenerator.yy",},"order":1,},
     {"id":{"name":"spr_editor_frame","path":"sprites/spr_editor_frame/spr_editor_frame.yy",},"order":2,},
@@ -21,6 +22,7 @@
     {"id":{"name":"obj_camera_editor","path":"objects/obj_camera_editor/obj_camera_editor.yy",},"order":5,},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},"order":3,},
     {"id":{"name":"obj_green","path":"objects/obj_green/obj_green.yy",},"order":4,},
+    {"id":{"name":"spr_camera_editor","path":"sprites/spr_camera_editor/spr_camera_editor.yy",},"order":5,},
     {"id":{"name":"TesterMaster","path":"objects/TesterMaster/TesterMaster.yy",},"order":6,},
     {"id":{"name":"obj_levelmetadata","path":"objects/obj_levelmetadata/obj_levelmetadata.yy",},"order":4,},
     {"id":{"name":"spr_blue","path":"sprites/spr_blue/spr_blue.yy",},"order":0,},
